@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-color: #121214;
+    --base-color: 999;
+    --bg-buttons: hsla(var(--base-color), 100%, 63%, 0.13);
+    --bg-button: hsl(var(--base-color), 100%, 63%);
+    --color-number: #FFFFFF;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+
+    display: grid;
+}
+
+main {
+    justify-self: center;
+    align-self: end;
+}
+
+.number {
+    display: flex;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 8.8rem;
+    line-height: 10.3rem;
+
+    color: var(--color-number);
+
+    margin-bottom: 1.6rem;
+    width: clamp(1.5rem, 2 + 5vw, 2.27rem);
+}
+
+.buttons {
+    display: flex;
+    gap: 3.2rem;
+
+    padding: 2.2rem 4rem;
+    margin: 0 auto;
+    background: var(--bg-buttons);
+    border-radius: 999.9rem;
+}
+
+button {
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.play svg path,
+.pause svg path,
+.sound-on svg path {
+    fill: var(--bg-button)
+}
+
+footer {
+    align-self: end;
+    justify-self: end;
+    padding: 0 4rem 3.2rem 0;
+}
