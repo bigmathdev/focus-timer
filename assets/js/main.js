@@ -7,15 +7,28 @@ const buttonSoundOff = document.querySelector('.sound-off')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 let minutes
-
 function countdown() {
     setTimeout(function(){
         let seconds = Number(secondsDisplay.textContent)
+        let minutes = Number(minutesDisplay.textContent)
+
+        secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
+
+        if (minutes <= 0) {
+            buttomPlay.classList.remove('hidden')
+            buttonPause.classList.add('hidden')
+            buttonStop.classList.add('hidden')
+            buttonConfig.classList.remove('hidden')
+            return
+        }
 
         if( seconds <= 0 ) {
-            seconds = 60
+            seconds = 2
+
+            minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
         }
-        secondsDisplay.textContent = seconds - 1
+
+        secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
 
         countdown()
     }, 1000)
@@ -28,6 +41,7 @@ buttomPlay.addEventListener('click', function() {
     buttonStop.classList.remove('hidden')
 
     countdown()
+
 })
 
 buttonPause.addEventListener('click', function() {
@@ -54,5 +68,5 @@ buttonSoundOff.addEventListener('click', function() {
 
 buttonConfig.addEventListener('click', function() {
     minutes = prompt('Quanto tempo você quer focar?')
-    minutesDisplay.textContent = minutes
+    minutesDisplay.textContent = String(minutes).padStart(2, "0")
 })
