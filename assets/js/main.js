@@ -51,6 +51,7 @@ buttonSoundOn.addEventListener("click", function () {
   buttonSoundOn.classList.add("hidden");
   buttonSoundOff.classList.remove("hidden");
   sound.backgroundSoundOn()
+  sound.backgroundSoundLoop()
 });
 
 buttonSoundOff.addEventListener("click", function () {
